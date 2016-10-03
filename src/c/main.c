@@ -71,7 +71,7 @@ static void handle_datetime(struct tm* tick_time, TimeUnits units_changed) {
     strftime(time_text, sizeof("00:00"), "%H:%M", tick_time);
     text_layer_set_text(time_layer, time_text);
   } else {
-    //Use 12 hour format
+    // Use 12 hour format
     strftime(time_text, sizeof("00:00"), "%I:%M", tick_time);
     text_layer_set_text(time_layer, time_text);
   }
