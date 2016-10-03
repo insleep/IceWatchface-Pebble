@@ -67,7 +67,7 @@ static void handle_datetime(struct tm* tick_time, TimeUnits units_changed) {
   static char time_text[] = "00:00"; // Needs to be static because it's used by the system later.
 
   if(clock_is_24h_style() == true) {
-    //Use 2h hour format
+    // Use 24 hour format
     strftime(time_text, sizeof("00:00"), "%H:%M", tick_time);
     text_layer_set_text(time_layer, time_text);
   } else {
@@ -89,10 +89,10 @@ static void handle_datetime(struct tm* tick_time, TimeUnits units_changed) {
   handle_battery(battery_state_service_peek());
 }
 
-// Handle the start-up of the app
+// Handle the start-up of the watchface
 static void init(void) {
 
-  // Create our app's base window
+  // Create the watchface's base window
   window = window_create();
   window_stack_push(window, true);
   window_set_background_color(window, GColorBlack);
@@ -100,7 +100,7 @@ static void init(void) {
   Layer *root_layer = window_get_root_layer(window);
   GRect frame = layer_get_frame(root_layer);
 
-  // Init the text layer used to show the time
+  // Initialize the text layer used to show the time
   time_layer = text_layer_create(GRect(0, 25, frame.size.w /* width */, 50/* height */));
   text_layer_set_text_color(time_layer, GColorWhite);
   text_layer_set_background_color(time_layer, GColorClear);
@@ -178,7 +178,7 @@ static void deinit(void) {
   window_destroy(window);
 }
 
-// The main event/run loop for our app
+// The main event/run loop for the watchface
 int main(void) {
   init();
   app_event_loop();
