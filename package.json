@@ -1,0 +1,43 @@
+{
+    "author": "Jonathan Wukitsch",
+    "dependencies": {},
+    "keywords": [],
+    "name": "ice",
+    "pebble": {
+        "capabilities": [
+            "configurable"
+        ],
+        "displayName": "Ice",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "KEY_INVERT": 0
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "fonts/Roboto-Bold.ttf",
+                    "name": "FONT_ROBOTO_BOLD_SUBSET_49",
+                    "type": "font"
+                },
+                {
+                    "file": "fonts/Roboto-Condensed.ttf",
+                    "name": "FONT_ROBOTO_CONDENSED_21",
+                    "type": "font"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite"
+        ],
+        "uuid": "7c316518-503d-4cdd-9359-5fb7723805bb",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.31.0"
+}
